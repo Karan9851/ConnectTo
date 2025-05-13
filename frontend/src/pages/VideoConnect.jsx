@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { TextField, Button, IconButton, Badge } from "@mui/material";
 import io from "socket.io-client";
 import { useNavigate, useParams } from "react-router-dom"; // Added useParams for room ID
-// import server from '../environment';
+import server from "../environment";
 
 import styles from "../styles/VideoConnect.module.css";
 import VideocamIcon from "@mui/icons-material/Videocam";
@@ -16,7 +16,7 @@ import ScreenShareIcon from "@mui/icons-material/ScreenShare";
 import StopScreenShareIcon from "@mui/icons-material/StopScreenShare";
 import ChatIcon from "@mui/icons-material/Chat";
 
-const server_url = "http://localhost:8080";
+const server_url = server; // Use the production server URL
 
 var connections = {};
 
@@ -54,7 +54,7 @@ function VideoConnect() {
   const joinRoom = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/rooms/join/${roomId}`
+        `${en}/api/v1/rooms/join/${roomId}`
       );
       if (response.status === 404) {
         alert("Room not found!");

@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import server from '../../../frontend/src/environment';
 
 const rooms = {}; // In-memory storage for rooms
 
@@ -6,7 +7,7 @@ const rooms = {}; // In-memory storage for rooms
 export const createRoom = (req, res) => {
     const roomId = uuidv4();
     rooms[roomId] = { participants: [] };
-    res.status(201).json({ roomLink: `http://localhost:8080/room/${roomId}` });
+    res.status(201).json({ roomLink: `${server}/room/${roomId}` });
 };
 
 export const joinRoom = (req, res) => {

@@ -3,17 +3,18 @@
 import React, { useContext, useState, createContext } from 'react';
 import httpStatus from "http-status";
 import { useNavigate } from 'react-router-dom';
+import server from '../environment';
 
 import axios from 'axios';
 
 export const AuthContext = createContext({});
 
 const client = axios.create({
-    baseURL: "http://localhost:8080/api/v1/users"
+    baseURL: `${server}/api/v1/users`
 });
 
 const roomClient = axios.create({
-    baseURL: "http://localhost:8080/api/v1/rooms" // Added for room-related API calls
+    baseURL: `${server}/api/v1/rooms` // Added for room-related API calls
 });
 
 export const AuthProvider = ({ children }) => {
