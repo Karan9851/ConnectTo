@@ -1,0 +1,471 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+
+
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background: url("/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.landingPageContainer nav .navHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0.2rem; /* Added bottom margin for slight spacing */
+}
+
+.landingPageContainer nav .navHeader img {
+  max-width: 200px; /* Reduced logo size */
+  height: auto;
+  
+  filter: brightness(100%) saturate(100%) invert(36%) sepia(94%) saturate(607%) hue-rotate(3deg) brightness(97%) contrast(98%);
+}
+
+.landingPageContainer nav {
+  padding-inline: 0.2rem; /* Minimal inline padding */
+  padding-block: 0; /* No top and bottom padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landingPageContainer nav .navlist {
+  display: flex;
+  gap: 1rem; /* Reduced spacing between nav items */
+  cursor: pointer;
+  margin-top: 0;
+  align-items: center;
+  font-size: 1.2rem; /* Slightly smaller font */
+  padding-top: 0.2rem; /* Optional fine-tuning */
+  padding-right: 2rem;
+  justify-content: flex-end;
+  
+}
+.landingPageContainer nav .navlist p {
+  margin: 0; /* Removes default margin on <p> tags */
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  height: 80vh;
+  align-items: center;
+}
+
+.landingMainContainer > div:nth-child(1) {
+  font-size: 2.2rem;
+}
+
+.landingMainContainer > div:nth-child(1) div[role='button'] {
+  background-color: #D97500;
+  width: fit-content;
+  padding: 0.7rem;
+  border-radius: 20px;
+  margin-top: 1.9rem;
+}
+
+.landingMainContainer > div:nth-child(1) div[role='button'] a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.7rem;
+}
+
+.landingMainContainer > div:nth-child(2) {
+  height: 70vh;
+  width: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .landingPageContainer nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  .landingPageContainer nav .navHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-right: 1rem;
+    
+   
+  }
+
+  .landingPageContainer nav .navlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 0.5rem;
+    position: absolute;
+    top: 3.1rem; /* same as navHeader top margin */
+    right: 0.1rem; /* match nav horizontal padding */
+  }
+
+  .landingMainContainer {
+    flex-direction: column;
+    padding-inline: 1rem;
+    padding-block: 2rem;
+    height: auto;
+    text-align: center;
+  }
+
+  .landingMainContainer > div:nth-child(1) {
+    font-size: 1.4rem;
+  }
+
+  .landingMainContainer > div:nth-child(1) div[role='button'] {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .landingMainContainer > div:nth-child(1) div[role='button'] a {
+    font-size: 1.2rem;
+  }
+
+  .landingMainContainer > div:nth-child(2) {
+    height: auto;
+    width: 100%;
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+
+
+
+
+/* this is for home page  */
+
+/* NavBar */
+/* Global Reset Suggestions (optional but helpful) */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(to right, #eef2f7, #fafafa);
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background 0.4s ease;
+}
+
+/* NavBar */
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  animation: fadeSlideDown 0.5s ease-in-out;
+}
+
+.navBar h2 {
+  margin: 0;
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+/* Nav Buttons Right Side */
+.navButtons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navButtons .MuiButton-root {
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 6px 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.navButtons .MuiButton-outlined {
+  border-color: #1976d2;
+  color: #1976d2;
+}
+
+.navButtons .MuiButton-outlined:hover {
+  background-color: #e3f2fd;
+  box-shadow: 0 2px 10px rgba(25, 118, 210, 0.2);
+}
+
+/* Main Container */
+.connectContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 8%;
+  gap: 6vw;
+  flex-wrap: wrap;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  margin: 60px auto;
+  max-width: 1200px;
+  animation: fadeIn 0.6s ease-in;
+}
+
+/* Left Panel */
+.leftPanel {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideLeft 0.6s ease;
+}
+
+.leftPanel h2 {
+  font-size: 2.2rem;
+  color: #1a237e;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Right Panel */
+.rightPanel {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideRight 0.6s ease;
+}
+
+.rightPanel > img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.rightPanel > img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons */
+.MuiButton-root {
+  transition: all 0.3s ease-in-out;
+  border-radius: 12px !important;
+  font-weight: 500 !important;
+}
+
+.MuiButton-containedPrimary {
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.25);
+}
+
+.MuiButton-containedPrimary:hover {
+  background-color: #1565c0;
+  box-shadow: 0 8px 28px rgba(25, 118, 210, 0.35);
+}
+
+/* Outlined Share Button Enhancement */
+.leftPanel > div > .MuiButton-outlinedPrimary {
+  background: linear-gradient(to right, #42a5f5, #1e88e5);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 10px 20px;
+  box-shadow: 0 6px 14px rgba(33, 150, 243, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.leftPanel > div > .MuiButton-outlinedPrimary:hover {
+  background: linear-gradient(to right, #1e88e5, #1565c0);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(25, 118, 210, 0.4);
+}
+
+/* Room Link Box Styling */
+.leftPanel > div > p {
+  background: #f0f7ff;
+  border: 1px solid #90caf9;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #0d47a1;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(25, 118, 210, 0.1);
+  word-break: break-word;
+  margin-bottom: 12px;
+}
+
+.leftPanel > div > p:hover {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  text-decoration: underline;
+}
+
+/* Inputs */
+.MuiTextField-root {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .connectContainer {
+    flex-direction: column;
+    padding: 48px 24px;
+    gap: 48px;
+    margin: 30px 16px;
+  }
+
+  .leftPanel,
+  .rightPanel {
+    text-align: center;
+    align-items: center;
+  }
+
+  .navBar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+  }
+
+  .navBar h2 {
+    font-size: 1.6rem;
+  }
+
+  .navButtons {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leftPanel h2 {
+    font-size: 1.5rem;
+  }
+
+  .MuiButton-root,
+  .MuiTextField-root {
+    width: 100% !important;
+  }
+}
+
+
