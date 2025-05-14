@@ -47,6 +47,12 @@ app.use("/api/v1/users", userRoutes);
 app.use('/api/v1/rooms', roomRoutes);
 
 
+app.get('/', (req, res) => {
+  res.send('Backend is working!');
+});
+
+
+
 
 
 const start = async () => {
