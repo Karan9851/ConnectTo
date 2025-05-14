@@ -54,7 +54,7 @@ function VideoConnect() {
   const joinRoom = async () => {
     try {
       const response = await fetch(
-        `${en}/api/v1/rooms/join/${roomId}`
+        `${server}/api/v1/rooms/join/${roomId}`
       );
       if (response.status === 404) {
         alert("Room not found!");

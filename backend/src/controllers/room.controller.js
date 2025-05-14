@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import server from '../../../frontend/src/environment';
+import server from '../environment.js';
 
 const rooms = {}; // In-memory storage for rooms
 
