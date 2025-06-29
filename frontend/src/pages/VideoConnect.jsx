@@ -31,6 +31,9 @@ function VideoConnect() {
   const localVideoref = useRef();
 
 
+
+
+
   const [videoAvailable, setVideoAvailable] = useState(true);
   const [audioAvailable, setAudioAvailable] = useState(true);
   const [video, setVideo] = useState([]);
@@ -544,7 +547,23 @@ function VideoConnect() {
 
 
   <div className={styles.videocontainer}>
-    <video className={styles.videopreview} ref={localVideoref} autoPlay muted />
+    {/* <video  className={styles.videopreview}  ref={localVideoref} autoPlay muted /> */}
+
+
+    <video
+  key={screen ? "screen" : "camera"}
+  ref={localVideoref}
+  autoPlay
+  muted
+  className={`${styles.videopreview}`}
+  style={{
+    transform: screen ? "none" : "scaleX(-1)",
+  }}
+/>
+
+
+
+
   </div>
 
 
@@ -618,7 +637,29 @@ function VideoConnect() {
             </Badge>
       </div>
 
-<video className={styles.connectUserVideo} ref={localVideoref} autoPlay muted></video>
+{/* <video className={styles.connectUserVideo} ref={localVideoref} autoPlay muted></video> */}
+
+
+
+<video
+  key={screen ? "screen" : "camera"} 
+  ref={localVideoref}
+  autoPlay
+  muted
+  className={`${styles.connectUserVideo}`}
+  style={{
+    transform: screen ? "none" : "scaleX(-1)", 
+  }}
+/>
+
+
+
+
+
+
+
+
+
 
 <div className={videos.length === 1 ? styles.conferenceViewFull : styles.conferenceView}>
   {videos.map((video) => (
