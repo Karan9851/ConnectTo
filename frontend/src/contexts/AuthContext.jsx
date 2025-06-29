@@ -14,7 +14,7 @@ const client = axios.create({
 });
 
 const roomClient = axios.create({
-    baseURL: `connecttofrontend.onrender.com//api/v1/rooms` // Added for room-related API calls
+    baseURL: `connecttofrontend.onrender.com/api/v1/rooms` // Added for room-related API calls
 });
 
 export const AuthProvider = ({ children }) => {
