@@ -7,7 +7,7 @@ const rooms = {}; // In-memory storage for rooms
 export const createRoom = (req, res) => {
     const roomId = uuidv4();
     rooms[roomId] = { participants: [] };
-    res.status(201).json({ roomLink: `${server}/room/${roomId}` });
+    res.status(201).json({ roomLink: `$connecttofrontend.onrender.com//room/${roomId}` });
 };
 
 export const joinRoom = (req, res) => {
